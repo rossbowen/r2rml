@@ -62,10 +62,7 @@ public class Main {
 
 			String format = configuration.getFormat();
 
-			if(format.equals("NQUADS") || format.equals("TRIG")) {
-				System.out.println("Writing dataset to dataset format. Ignoring irrelevant parameters.");
-				writeDatasetAsDatasetFile(configuration, engine);
-			} else if(configuration.isFilePerGraph()) {
+			if(configuration.isFilePerGraph()) {
 				System.out.println("Writing dataset as separate files. Ignoring irrelevant parameters.");
 				writeDatasetAsFiles(configuration, engine);
 			} else {
